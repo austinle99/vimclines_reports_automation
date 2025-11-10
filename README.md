@@ -35,7 +35,7 @@ vlines-workspace/ (This GitHub repo)
 
 ```bash
 # 1. Clone the workspace from GitHub
-git clone <YOUR-GITHUB-WORKSPACE-URL> vlines-workspace
+git clone https://github.com/austinle99/vimclines_reports_automation.git vlines-workspace
 cd vlines-workspace
 
 # 2. Clone the frontend from GitLab
