@@ -11,7 +11,6 @@ vlines-workspace/ (This GitHub repo)
 ├── one-data-fe/                    # Frontend (separate GitLab repo)
 ├── reports-automation/             # Python automation (tracked here)
 ├── PROJECT_STRUCTURE.md            # Detailed project documentation
-├── NEXT_STEPS_FOR_CLAUDE.md       # Development roadmap
 └── vlines-workspace.code-workspace # VS Code workspace config
 ```
 
@@ -141,7 +140,6 @@ git push origin main
 ## Documentation
 
 - [PROJECT_STRUCTURE.md](./PROJECT_STRUCTURE.md) - Complete project architecture
-- [NEXT_STEPS_FOR_CLAUDE.md](./NEXT_STEPS_FOR_CLAUDE.md) - Development roadmap
 - [reports-automation/README.md](./reports-automation/README.md) - Python automation docs
 - [reports-automation/QUICKSTART.md](./reports-automation/QUICKSTART.md) - Quick start guide
 

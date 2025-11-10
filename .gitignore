@@ -36,3 +36,6 @@ Thumbs.db
 
 # Temporary backup script
 backup.sh
+
+# Internal development notes
+NEXT_STEPS_FOR_CLAUDE.md
