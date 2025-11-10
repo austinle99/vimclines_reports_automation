@@ -1,0 +1,41 @@
+# VLines Weekly Reports Automation - Python Dependencies
+
+# PowerPoint Generation
+python-pptx==0.6.23
+
+# Scheduling
+schedule==1.2.0
+
+# HTTP Requests
+requests==2.31.0
+
+# Configuration Management
+PyYAML==6.0.1
+
+# Data Processing
+pandas==2.2.0
+
+# Chart Generation (if needed for embedded charts)
+matplotlib==3.8.2
+Pillow==10.2.0
+
+# Date/Time utilities
+python-dateutil==2.8.2
+
+# Environment variables management
+python-dotenv==1.0.0
+
+# Optional: Database support (uncomment if needed)
+# psycopg2-binary==2.9.9  # PostgreSQL
+# pymysql==1.1.0          # MySQL
+# sqlalchemy==2.0.25      # ORM
+
+# Optional: Google Slides API (if you decide to use it later)
+# google-api-python-client==2.108.0
+# google-auth-httplib2==0.2.0
+# google-auth-oauthlib==1.2.0
+
+# Development dependencies (optional)
+# pytest==7.4.3
+# black==23.12.1
+# flake8==6.1.0

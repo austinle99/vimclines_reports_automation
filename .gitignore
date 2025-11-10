@@ -1,0 +1,38 @@
+# Exclude the frontend project (tracked separately in GitLab)
+one-data-fe/
+
+# Python virtual environment
+reports-automation/venv/
+reports-automation/.venv/
+reports-automation/env/
+
+# Python cache
+reports-automation/__pycache__/
+reports-automation/**/__pycache__/
+reports-automation/**/*.pyc
+reports-automation/**/*.pyo
+reports-automation/**/*.pyd
+
+# Generated reports
+reports-automation/reports/*.pptx
+reports-automation/reports/*.pdf
+
+# Logs
+reports-automation/logs/*.log
+
+# Environment variables
+reports-automation/.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary backup script
+backup.sh

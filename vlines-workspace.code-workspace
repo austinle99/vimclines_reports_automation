@@ -1,0 +1,188 @@
+{
+  "folders": [
+    {
+      "name": "Frontend (React + TypeScript)",
+      "path": "one-data-fe"
+    },
+    {
+      "name": "Reports Automation (Python)",
+      "path": "reports-automation"
+    }
+  ],
+  "settings": {
+    // Python settings
+    "python.defaultInterpreterPath": "${workspaceFolder:Reports Automation (Python)}/venv/Scripts/python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+
+    // TypeScript/JavaScript settings
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+    },
+
+    // Python formatting
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+      }
+    },
+
+    // YAML formatting
+    "[yaml]": {
+      "editor.defaultFormatter": "redhat.vscode-yaml",
+      "editor.formatOnSave": true
+    },
+
+    // File associations
+    "files.associations": {
+      "*.yaml": "yaml",
+      "*.yml": "yaml",
+      ".env.example": "properties"
+    },
+
+    // Exclude patterns from search
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/venv": true,
+      "**/__pycache__": true,
+      "**/dist": true,
+      "**/*.pyc": true
+    },
+
+    // File watcher exclusions
+    "files.watcherExclude": {
+      "**/node_modules/**": true,
+      "**/venv/**": true,
+      "**/__pycache__/**": true,
+      "**/dist/**": true
+    },
+
+    // Terminal settings
+    "terminal.integrated.env.windows": {
+      "PYTHONPATH": "${workspaceFolder:Reports Automation (Python)}"
+    },
+
+    // Editor settings
+    "editor.rulers": [80, 120],
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+
+    // Git settings
+    "git.ignoreLimitWarning": true
+  },
+  "extensions": {
+    "recommendations": [
+      // Python
+      "ms-python.python",
+      "ms-python.vscode-pylance",
+      "ms-python.black-formatter",
+
+      // JavaScript/TypeScript
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+
+      // React
+      "dsznajder.es7-react-js-snippets",
+
+      // YAML
+      "redhat.vscode-yaml",
+
+      // Git
+      "eamodio.gitlens",
+
+      // Utilities
+      "streetsidesoftware.code-spell-checker",
+      "gruntfuggly.todo-tree"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Python: Generate Report Now",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder:Reports Automation (Python)}/scripts/scheduler.py",
+        "args": ["--now"],
+        "console": "integratedTerminal",
+        "cwd": "${workspaceFolder:Reports Automation (Python)}"
+      },
+      {
+        "name": "Python: Start Scheduler",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder:Reports Automation (Python)}/scripts/scheduler.py",
+        "console": "integratedTerminal",
+        "cwd": "${workspaceFolder:Reports Automation (Python)}"
+      },
+      {
+        "name": "Python: Test Data Fetcher",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder:Reports Automation (Python)}/scripts/data_fetcher.py",
+        "console": "integratedTerminal",
+        "cwd": "${workspaceFolder:Reports Automation (Python)}"
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Frontend: Start Dev Server",
+        "type": "npm",
+        "script": "dev",
+        "path": "one-data-fe/",
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        }
+      },
+      {
+        "label": "Frontend: Build",
+        "type": "npm",
+        "script": "build",
+        "path": "one-data-fe/",
+        "problemMatcher": [],
+        "group": {
+          "kind": "build",
+          "isDefault": false
+        }
+      },
+      {
+        "label": "Python: Install Dependencies",
+        "type": "shell",
+        "command": "pip install -r requirements.txt",
+        "options": {
+          "cwd": "${workspaceFolder:Reports Automation (Python)}"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Python: Generate Report Now",
+        "type": "shell",
+        "command": "python scripts/scheduler.py --now",
+        "options": {
+          "cwd": "${workspaceFolder:Reports Automation (Python)}"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+# VLines Weekly Reports Automation Configuration
+
+# Data Source Configuration
+data_source:
+  # Type: 'api', 'json', or 'database'
+  type: json
+
+  # API Configuration (when type = 'api')
+  url: http://localhost:3001/api/weekly-reports/data
+
+  # JSON Configuration (when type = 'json')
+  json_path: data/weekly_data.json
+
+  # Database Configuration (when type = 'database')
+  # database:
+  #   host: localhost
+  #   port: 5432
+  #   name: vlines_db
+  #   user: postgres
+  #   password: ${DB_PASSWORD}  # Use environment variable
+
+# Output Configuration
+output:
+  directory: ./reports
+  filename_pattern: VLines_Weekly_Report_{date}.pptx
+
+  # Keep reports for X days (optional cleanup)
+  retention_days: 90
+
+# Scheduling Configuration
+schedule:
+  # Day: monday, tuesday, wednesday, thursday, friday, saturday, sunday
+  day: monday
+
+  # Time in HH:MM format (24-hour)
+  time: "09:00"
+
+# Template Configuration
+template:
+  path: ./templates/weekly_report_template.pptx
+
+  # Placeholders to replace in template
+  placeholders:
+    # TCKT
+    total_receivables: "{{TOTAL_RECEIVABLES}}"
+    within_term_receivables: "{{WITHIN_TERM_RECEIVABLES}}"
+    overdue_receivables: "{{OVERDUE_RECEIVABLES}}"
+    total_payables: "{{TOTAL_PAYABLES}}"
+    within_term_payables: "{{WITHIN_TERM_PAYABLES}}"
+    overdue_payables: "{{OVERDUE_PAYABLES}}"
+    current_month_cash: "{{CURRENT_MONTH_CASH}}"
+    previous_month_cash: "{{PREVIOUS_MONTH_CASH}}"
+
+    # Metadata
+    report_week: "{{REPORT_WEEK}}"
+    report_date: "{{REPORT_DATE}}"
+    generated_date: "{{GENERATED_DATE}}"
+
+# Notification Configuration (optional)
+notifications:
+  enabled: false
+
+  # Email notification
+  email:
+    enabled: false
+    smtp_server: smtp.gmail.com
+    smtp_port: 587
+    sender: reports@vlines.com
+    recipients:
+      - manager@vlines.com
+      - team@vlines.com
+    subject: "VLines Weekly Report - Week {week}"
+
+  # Slack notification
+  slack:
+    enabled: false
+    webhook_url: ${SLACK_WEBHOOK_URL}
+    channel: "#reports"
+
+# Logging Configuration
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR
+  file: logs/reports_automation.log
+  max_size_mb: 10
+  backup_count: 5

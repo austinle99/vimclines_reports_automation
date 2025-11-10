@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "week": "2025-W43",
+    "generated_at": "2025-10-29T09:00:00",
+    "report_type": "weekly"
+  },
+  "tckt": {
+    "overview": {
+      "receivables": {
+        "total": 112282563,
+        "within_term": 107816808,
+        "overdue": 3465756
+      },
+      "payables": {
+        "total": 157050197,
+        "within_term": 73185728,
+        "overdue": 83864469
+      },
+      "cash_flow": {
+        "current_month": 173612532,
+        "previous_month": 135636758
+      }
+    }
+  },
+  "ops": {
+    "ship_schedule": [
+      {
+        "ship_name": "MTT LimBang",
+        "voyage": "25LG021 S/N",
+        "route": "PCX",
+        "position": "Etd CCU 14/8",
+        "speed_sb_nb": "11.6",
+        "weather": "3E",
+        "days_notes": "",
+        "status": "Dự kiến neo chờ boretide 5 ngày",
+        "actual_ports": ""
+      },
+      {
+        "ship_name": "BD Mariner",
+        "voyage": "MB2525 S/N",
+        "route": "CMS",
+        "position": "Đang voy 26N",
+        "speed_sb_nb": "11.1",
+        "weather": "11.4",
+        "days_notes": "9 ngày 18h",
+        "status": "Adhoc Đà Nẵng",
+        "actual_ports": "Tcit và GML kẹt (cập TT, cmit)"
+      }
+    ],
+    "performance": {
+      "profomar_vs_actual": {
+        "ships": ["MB2525SN", "BS2527SN", "NB2523SN"],
+        "profomar_days": [8, 7, 7],
+        "actual_days": [9.7, 7.4, 7]
+      }
+    }
+  },
+  "kinh_doanh": {
+    "market_overview": {
+      "hph_hcm_route": {
+        "vlines_share": 11.0,
+        "others_share": 89.0
+      },
+      "hcm_hph_route": {
+        "vlines_share": 11.6,
+        "others_share": 88.4
+      }
+    },
+    "domestic_performance": {
+      "weeks": [
+        "VN125/25",
+        "BL125/25",
+        "BS125/25",
+        "VJ125/25"
+      ],
+      "allocated": [460, 620, 460, 620],
+      "actual": [520, 662, 462, 560],
+      "percentage": [113, 107, 100, 90]
+    },
+    "top_customers": {
+      "hph_hcm": ["Honda", "Minh Đức", "Acecook", "Leeman", "Calofic"],
+      "hcm_hph": ["Acecook", "Dương", "Pantos", "Chánh", "Việt Nhật"],
+      "hcm_dan": ["Calofic", "Chánh", "Pantos", "Acecook"]
+    }
+  }
+}
